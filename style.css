@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 20px;
+    position: relative;
+    height: 200px; /* Adjust this height to fit both buttons */
+}
+
+button {
+    width: 130px; /* Adjust the width as needed */
+    border-radius: 10px;
+    padding: 10px;
+    position: relative; /* Ensuring relative positioning for both buttons */
+}
+
+button:hover {
+    transform: translate(-3px, -5px);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.nerima {
+    background-color: pink;
+}
+
+.nolak {
+    background-color: red;
+    position: absolute;
+    transition: left 0.1s, top 0.1s; /* Faster transition for better evasion */
+    left: 150px; /* Initial positioning to avoid overlap */
+    top: 0; /* Initial positioning to avoid overlap */
+}
+
+/* Responsif untuk perangkat dengan lebar maksimal 600px */
+@media screen and (max-width: 600px) {
+    body, html {
+        height: auto; /* Adjusting height for small screens */
+    }
+
+    .button-container {
+        flex-direction: column;
+        height: auto; /* Adjusted for better spacing in smaller screens */
+        gap: 1rem;
+        position: static; /* Reset to ensure proper layout */
+    }
+
+    .nolak {
+        position: relative;
+        left: auto; /* Reset positioning */
+        top: auto;  /* Reset positioning */
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Halo🙋‍♂️❤️</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Haii Cantik</h1>
+    <div class="img-container">
+        <img src="love-you-love.gif" alt="love">
+    </div>
+    <h1 style="text-align: center;">Mau Ga jadi Pacarku ??</h1>
+    <div class="button-container">
+        <button id="btn_mau" class="nerima" onclick="alert('I Love You❤️❤️❤️❤️')">Mau</button>
+        <button id="btn_gamau" class="nolak" onmouseover="gamau(this)" onmousedown="gamau(this)" ontouchstart="gamau(this)">Gamau</button>
+    </div>
+
+    <script>
+        function gamau(button) {
+            var container = document.querySelector('.button-container');
+            var containerRect = container.getBoundingClientRect();
+            var mauButton = document.getElementById('btn_mau').getBoundingClientRect();
+            var buttonRect = button.getBoundingClientRect();
+
+            var newLeft, newTop;
+            var speedFactor = window.innerWidth <= 600 ? 2 : 1; // Increase speed on mobile
+
+            do {
+                newLeft = Math.random() * (containerRect.width - buttonRect.width) * speedFactor;
+                newTop = Math.random() * (containerRect.height - buttonRect.height) * speedFactor;
+            } while (newLeft >= mauButton.left - containerRect.left &&
+                     newLeft <= mauButton.right - containerRect.left &&
+                     newTop >= mauButton.top - containerRect.top &&
+                     newTop <= mauButton.bottom - containerRect.top);
+
+            button.style.left = newLeft + 'px';
+            button.style.top = newTop + 'px';
+        }
+    </script>
+</body>
+</html>
